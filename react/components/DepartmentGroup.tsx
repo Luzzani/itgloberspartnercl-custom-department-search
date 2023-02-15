@@ -16,7 +16,6 @@ type Category = {
 }
 
 const DepartmentGroup =({departments, handleSetSlug}: Props)=> {
-    console.log("departments: ", departments)
     
      const CSS_HANDLES = [
          "departmentGroup__container",
@@ -26,7 +25,7 @@ const DepartmentGroup =({departments, handleSetSlug}: Props)=> {
     const handles = useCssHandles(CSS_HANDLES)
 
     const onHandleSetSlug = (e: any) => {
-        handleSetSlug(`${e.target.value}/$\{term\}&map=ft`)
+        handleSetSlug(`${e.target.value}/$\{term\}`)
     }
 
     const departmentOptions: any = departments.map((department: Category)=> {
@@ -38,7 +37,6 @@ const DepartmentGroup =({departments, handleSetSlug}: Props)=> {
         </option>
     })
     
-    console.log("departments2: ", departmentOptions)
     return <div className={`${handles["departmentGroup__container"]} h-100 pv4`}
     >
     <select
