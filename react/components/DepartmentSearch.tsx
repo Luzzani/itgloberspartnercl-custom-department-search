@@ -10,15 +10,11 @@ const DepartmentSearch = () => {
 
     const [slug, setSlug] = useState("")
 
-    console.log("slug:", slug)
-
-    console.log("datos de query: ", data?.categories[0].children)
-
     return loading ? <div>Loading...</div>
     :
     <div className='flex items-center justify-center'>
         <DepartmentGroup 
-            departments={data?.categories[0].children}
+            departments={data?.categories}
             handleSetSlug={setSlug}
         />
         <SearchBar 
